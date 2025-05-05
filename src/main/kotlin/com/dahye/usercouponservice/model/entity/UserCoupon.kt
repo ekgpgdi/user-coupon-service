@@ -1,4 +1,4 @@
-package model.entity
+package com.dahye.usercouponservice.model.entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document

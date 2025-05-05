@@ -1,4 +1,4 @@
-package model.enums
+package com.dahye.usercouponservice.model.enums
 
 enum class CouponType(
     val description: String,

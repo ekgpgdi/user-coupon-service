@@ -1,6 +1,6 @@
-package model.entity
+package com.dahye.usercouponservice.model.entity
 
-import model.enums.CouponType
+import com.dahye.usercouponservice.model.enums.CouponType
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
