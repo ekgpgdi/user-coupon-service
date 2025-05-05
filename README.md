@@ -43,19 +43,37 @@
 ```
 * 동작: USER_REGISTERED 이벤트 수신 시 쿠폰을 발급하고 MongoDB에 저장합니다.
 
-### 2️⃣ 쿠폰 조회 API
+### 2️⃣ 유저 쿠폰 내역 조회 API
 
-- **엔드포인트**: GET /coupons/{couponId}
-- **설명**: 쿠폰 ID로 쿠폰 상세 정보를 조회합니다.
+- **엔드포인트**: GET /coupons/{userId}
+- **설명**: 특정 유저의 ID로 보유 중인 쿠폰 목록을 조회합니다.
 - **응답 예시**:
 
 ```json
 {
-  "couponId": "coup-001",
   "userId": "abc123",
-  "status": "ISSUED",
-  "issuedAt": "2025-05-03T12:00:00Z",
-  "redeemedAt": null
+  "coupons": [
+    {
+      "couponId": "coup-001",
+      "title": "웰컴 쿠폰",
+      "description": "신규 가입 시 드리는 쿠폰",
+      "event": "회원가입 이벤트",
+      "availableFrom": "2025-05-01T00:00:00Z",
+      "availableTo": "2025-06-01T00:00:00Z",
+      "isUsed": false,
+      "usedAt": null
+    },
+    {
+      "couponId": "coup-002",
+      "title": "5월 한정 할인",
+      "description": "5월 한 달간 사용 가능한 10% 할인 쿠폰",
+      "event": "5월 프로모션",
+      "availableFrom": "2025-05-01T00:00:00Z",
+      "availableTo": "2025-05-31T23:59:59Z",
+      "isUsed": true,
+      "usedAt": "2025-05-10T15:30:00Z"
+    }
+  ]
 }
 ```
 
