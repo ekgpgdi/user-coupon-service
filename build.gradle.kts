@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.25"
     id("org.springframework.boot") version "3.4.5"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.jlleitschuh.gradle.ktlint").version("12.1.0")
 }
 
 group = "com.dahye"
@@ -42,6 +43,10 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
+}
+
+ktlint {
+    outputToConsole = true // 콘솔에 직접 출력
 }
 
 tasks.withType<Test> {
