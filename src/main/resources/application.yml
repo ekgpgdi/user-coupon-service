@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: user-coupon-service
+
+  data:
+    mongodb:
+      uri: mongodb://root:localpw@localhost:27017/coupon_service?authSource=admin
