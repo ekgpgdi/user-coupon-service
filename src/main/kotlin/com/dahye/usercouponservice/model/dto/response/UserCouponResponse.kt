@@ -1,21 +1,20 @@
-package com.dahye.usercouponservice.model.entity
+package com.dahye.usercouponservice.model.dto.response
 
 import com.dahye.usercouponservice.model.enums.CouponType
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
 
-@Document(collection = "user_coupon")
-data class UserCoupon(
-    @Id
-    val id: String? = null,
+data class UserCouponResponse(
     val userId: String,
+    val coupons: List<CouponResponse>,
+)
+
+data class CouponResponse(
     val couponId: String,
     val title: String,
     val content: String,
     val type: CouponType,
     val availableFrom: LocalDateTime,
     val availableTo: LocalDateTime,
-    val used: Boolean = false,
+    val isUsed: Boolean,
     val usedAt: LocalDateTime? = null,
 )
